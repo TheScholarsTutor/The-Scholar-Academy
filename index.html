@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Usama | Premium Online & Physical Tutoring Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --secondary: #2563eb;
+            --secondary-dark: #1d4ed8;
+            --accent: #f97316;
+            --accent-light: #fb923c;
+            --success: #10b981;
+            --gold: #fbbf24;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.16);
+            --shadow-xl: 0 25px 60px rgba(0, 0, 0, 0.20);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        /* Sticky Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 2px solid var(--border-color);
+            padding: 1.2rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            font-size: 0;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-size: 0.95rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Dynamic Hero Section */
+        .hero {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--secondary) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 20;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            animation: slideInDown 0.8s ease 0.2s both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 300;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease 0.7s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--secondary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            background: var(--bg-light);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--secondary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Floating Orbit Logo */
+        .orbit-container {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 15;
+            pointer-events: none;
+        }
+
+        .orbit {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            animation: rotate 30s linear infinite;
+            opacity: 0.3;
+        }
+
+        .orbit:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            animation: rotate 40s linear infinite reverse;
+            opacity: 0.2;
+        }
+
+        .orbit:nth-child(3) {
+            width: 500px;
+            height: 500px;
+            animation: rotate 50s linear infinite;
+            opacity: 0.15;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Subject Orbits around center logo */
+        .subject-orbit {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+            font-weight: bold;
+        }
+
+        .subject-1 {
+            animation: orbit1 12s linear infinite;
+        }
+
+        .subject-2 {
+            animation: orbit2 14s linear infinite;
+        }
+
+        .subject-3 {
+            animation: orbit3 16s linear infinite;
+        }
+
+        .subject-4 {
+            animation: orbit4 18s linear infinite;
+        }
+
+        .subject-5 {
+            animation: orbit5 20s linear infinite;
+        }
+
+        @keyframes orbit1 {
+            from {
+                transform: rotateZ(0deg) translateX(200px) rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg) translateX(200px) rotateZ(-360deg);
+            }
+        }
+
+        @keyframes orbit2 {
+            from {
+                transform: rotateZ(72deg) translateX(200px) rotateZ(-72deg);
+            }
+            to {
+                transform: rotateZ(432deg) translateX(200px) rotateZ(-432deg);
+            }
+        }
+
+        @keyframes orbit3 {
+            from {
+                transform: rotateZ(144deg) translateX(200px) rotateZ(-144deg);
+            }
+            to {
+                transform: rotateZ(504deg) translateX(200px) rotateZ(-504deg);
+            }
+        }
+
+        @keyframes orbit4 {
+            from {
+                transform: rotateZ(216deg) translateX(200px) rotateZ(-216deg);
+            }
+            to {
+                transform: rotateZ(576deg) translateX(200px) rotateZ(-576deg);
+            }
+        }
+
+        @keyframes orbit5 {
+            from {
+                transform: rotateZ(288deg) translateX(200px) rotateZ(-288deg);
+            }
+            to {
+                transform: rotateZ(648deg) translateX(200px) rotateZ(-648deg);
+            }
+        }
+
+        .center-logo {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            border-radius: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            box-shadow: 0 0 40px rgba(37, 99, 235, 0.6);
+            z-index: 25;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 40px rgba(37, 99, 235, 0.6);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(37, 99, 235, 0.8), 0 0 80px rgba(249, 115, 22, 0.4);
+            }
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(20px);
+            }
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Content area that appears after scroll */
+        .content-wrapper {
+            position: relative;
+            z-index: 11;
+            min-height: 100vh;
+            background: var(--bg-white);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 3px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 3.5rem;
+            margin-top: 2rem;
+            font-weight: 400;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--secondary) 100%);
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 3rem auto;
+            position: relative;
+            z-index: 10;
+            box-shadow: var(--shadow-lg);
+            border-radius: 20px;
+            border-top: 3px solid var(--accent);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .qualification-list {
+            list-style: none;
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .qualification-list li {
+            padding: 1rem;
+            padding-left: 2.5rem;
+            position: relative;
+            color: var(--text-light);
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .qualification-list li:hover {
+            background: white;
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+        }
+
+        .qualification-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0.8rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            height: 450px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+        }
+
+        /* Academy Type Badge */
+        .academy-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            font-size: 1.1rem;
+        }
+
+        /* Subjects Section */
+        .subjects {
+            background: var(--bg-white);
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .subject-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+
+        .subject-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--secondary);
+            background: white;
+        }
+
+        .subject-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            padding: 1rem 1.3rem;
+            border-radius: 12px;
+        }
+
+        .subject-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .subject-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 2px solid var(--border-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--secondary);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: var(--bg-white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-light);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+
+        .pricing-card:hover {
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-15px);
+            background: white;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-xl);
+            transform: scale(1.08);
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            padding: 0.6rem 1.3rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.6rem;
+            margin: 1.5rem 0;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1.5rem 0;
+        }
+
+        .price-subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2.5rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 1rem 0;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1rem;
+        }
+
+        .pricing-features li:last-child {
+            border: none;
+        }
+
+        .pricing-features li::before {
+            content: '✓ ';
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Form Section */
+        .enrollment {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enrollment h2 {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .enrollment h2::after {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+        }
+
+        .enrollment .section-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 3.5rem;
+            border-radius: 20px;
+            color: var(--text-dark);
+            box-shadow: var(--shadow-xl);
+            backdrop-filter: blur(20px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--bg-white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+            background: var(--bg-light);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 0.7rem;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin: 0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-group label:hover {
+            color: var(--secondary);
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--secondary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-success {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            display: none;
+            font-weight: 600;
+            border-left: 4px solid var(--success);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            border: 2px solid var(--border-color);
+        }
+
+        .contact-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366 0%, #1fa851 100%);
+            color: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .whatsapp-btn:hover {
+            background: linear-gradient(135deg, #1fa851 0%, #16873d 100%);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+            border-top: 2px solid var(--secondary);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        .footer-content .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            margin: 1.5rem auto;
+            border-radius: 3px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .orbit-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .subject-orbit {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+
+            .center-logo {
+                width: 80px;
+                height: 80px;
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .qualification-list {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .price {
+                font-size: 2.2rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <div class="logo-icon">MU</div>
+                <span class="logo-text">Muhammad Usama</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#subjects">Subjects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#enrollment">Enroll</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dynamic Hero Section with Rotating Orbits -->
+    <section class="hero">
+        <div class="orbit-container">
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+
+            <!-- Rotating Subject Orbits -->
+            <div class="subject-orbit subject-1" title="Biology">🔬</div>
+            <div class="subject-orbit subject-2" title="Chemistry">⚗️</div>
+            <div class="subject-orbit subject-3" title="Physics">⚡</div>
+            <div class="subject-orbit subject-4" title="English">📖</div>
+            <div class="subject-orbit subject-5" title="Holy Quran">📿</div>
+
+            <!-- Center Logo -->
+            <div class="center-logo">MU</div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">✨ Online & Physical Academy</div>
+            <h1>Master Your Future<br>Transform Your Journey</h1>
+            <p class="hero-subtitle">Expert guidance in 5 comprehensive subjects. Learn from anywhere with our flexible online classes or visit our physical academy in Kohat. Join 500+ successful students today.</p>
+            <div class="hero-buttons">
+                <a href="#enrollment" class="btn btn-primary">🚀 Start Learning Today</a>
+                <a href="https://wa.me/923375314089" class="btn btn-secondary">💬 Chat on WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Stats Section -->
+        <div class="container">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Students Transformed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Expert Subjects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Student Satisfaction</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="academy-badge">🎓 Online & Physical Academy</div>
+                <h2>About Your Expert Tutor</h2>
+                <p class="section-subtitle">Dedicated educator committed to academic excellence</p>
+                
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h3>Muhammad Usama</h3>
+                        <p>I'm a passionate educator with a genuine commitment to making learning accessible, engaging, and transformative for every student. With a Zoology background and 3+ years of teaching experience, I've developed proven strategies to help students not just pass exams, but truly master their subjects.</p>
+                        
+                        <p>Whether you prefer learning from the comfort of your home through our online classes or visiting our physical academy in KDA Sector 8, Kohat, I'm here to provide personalized guidance that works for your lifestyle.</p>
+                        
+                        <ul class="qualification-list">
+                            <li>Zoology Graduate (2023)</li>
+                            <li>3+ Years Teaching Experience</li>
+                            <li>Expert in 5 Subjects</li>
+                            <li>Personalized Learning Plans</li>
+                            <li>Board Exam Specialist</li>
+                            <li>Online & Physical Classes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-image">
+                        📚
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subjects Section -->
+        <section class="subjects" id="subjects">
+            <div class="container">
+                <h2>Expert Subjects</h2>
+                <p class="section-subtitle">Master five comprehensive subjects with personalized guidance</p>
+                
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-icon">🔬</div>
+                        <h3>Biology</h3>
+                        <p>Complete coverage of cellular biology, genetics, ecology, and human physiology. Master both theoretical concepts and practical applications.</p>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-icon">⚗️</div>
+                        <h3>Chemistry</h3>
+                        <p>From atomic structure to organic chemistry, learn practical problem-solving techniques. Perfect for competitive exams.</p>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-icon">⚡</div>
+                        <h3>Physics</h3>
+                        <p>Master mechanics, thermodynamics, electricity, and modern physics. Interactive sessions with real-world examples.</p>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-icon">📖</div>
+                        <h3>English</h3>
+                        <p>Comprehensive English language and literature coaching. Grammar, composition, comprehension, and critical analysis.</p>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-icon">📿</div>
+                        <h3>Holy Quran</h3>
+                        <p>Tajweed, memorization, and understanding of the Holy Quran. Spiritual and academic guidance combined with Islamic values.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <h2>What We Offer</h2>
+                <p class="section-subtitle">Comprehensive tutoring designed for your success</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>Online Classes</h3>
+                        <p>Learn from anywhere. Flexible scheduling via Zoom with comprehensive notes, recorded sessions, and 24/7 support.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🏫</div>
+                        <h3>Physical Classes</h3>
+                        <p>Visit our academy in KDA Sector 8, Kohat. Interactive one-on-one or small group sessions for personalized attention.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🎓</div>
+                        <h3>All Levels</h3>
+                        <p>Matric (Classes 8-10) and FSC (1st & 2nd Year) complete syllabus coverage. Both Pre-Engineering and Pre-Medical support.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Exam Preparation</h3>
+                        <p>Targeted board exam preparation. Solved past papers, important questions, and time management strategies included.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">❓</div>
+                        <h3>Doubt Resolution</h3>
+                        <p>Quick clarification anytime. Problem-solving guidance for difficult concepts with detailed explanations.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📈</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Regular assessments with detailed feedback. Track improvement with performance reports and personalized insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <h2>Transparent Pricing</h2>
+                <p class="section-subtitle">Affordable premium education for all students - Online & Physical</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Matric Students</h3>
+                        <h4 style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 1.5rem;">Single Subject</h4>
+                        
+                        <div class="price">₨2,000</div>
+                        <p class="price-subtitle">Per Month</p>
+                        
+                        <ul class="pricing-features">
+                            <li>Classes 8, 9 & 10</li>
+                            <li>Online or Physical</li>
+                            <li>Study Materials</li>
+                            <li>Flexible Schedule</li>
+                            <li>Doubt Support</li>
+                            <li>Progress Reports</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">POPULAR</div>
+                        <h3>Matric Students</h3>
+                        <h4 style="font-size: 1.1rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 700;">Both Subjects</h4>
+                        
+                        <div class="price">₨3,000</div>
+                        <p class="price-subtitle">Per Month</p>
+                        
+                        <ul class="pricing-features">
+                            <li>Bio + Chemistry Bundle</li>
+                            <li>Online & Physical Options</li>
+                            <li>Comprehensive Notes</li>
+                            <li>Priority Support</li>
+                            <li>Exam Preparation</li>
+                            <li>Flexible Hours</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">RECOMMENDED</div>
+                        <h3>FSC Students</h3>
+                        <h4 style="font-size: 1.1rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 700;">Premium Bundle</h4>
+                        
+                        <div class="price">₨4,000</div>
+                        <p class="price-subtitle">Per Month</p>
+                        
+                        <ul class="pricing-features">
+                            <li>Bio + Chemistry Advanced</li>
+                            <li>1st & 2nd Year Coverage</li>
+                            <li>Online & Physical Classes</li>
+                            <li>Advanced Materials</li>
+                            <li>VIP Support 24/7</li>
+                            <li>Board Exam Mastery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enrollment Form -->
+        <section class="enrollment" id="enrollment">
+            <div class="container">
+                <h2>Begin Your Learning Journey</h2>
+                <p class="section-subtitle">Choose Online or Physical Classes - Fill the form to get started</p>
+                
+                <div class="form-container">
+                    <div class="form-success" id="formSuccess">
+                        ✓ Thank you for enrolling! We'll contact you shortly on WhatsApp.
+                    </div>
+                    
+                    <form id="enrollmentForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="03XXXXXXXXX" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="class">Class/Level *</label>
+                                <select id="class" name="class" required>
+                                    <option value="">Select Your Class</option>
+                                    <option value="Class 8">Class 8</option>
+                                    <option value="Class 9">Class 9</option>
+                                    <option value="Class 10">Class 10</option>
+                                    <option value="FSC 1st Year">FSC 1st Year</option>
+                                    <option value="FSC 2nd Year">FSC 2nd Year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mode">Class Mode *</label>
+                                <select id="mode" name="mode" required>
+                                    <option value="">Select Mode</option>
+                                    <option value="Online">Online (Zoom)</option>
+                                    <option value="Physical">Physical (KDA Sector 8)</option>
+                                    <option value="Both">Both Online & Physical</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="board">Educational Board</label>
+                                <select id="board" name="board">
+                                    <option value="">Select Board</option>
+                                    <option value="Federal Board">Federal Board</option>
+                                    <option value="Provincial Board">Provincial Board</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Subjects You Want to Enroll *</label>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="subjects" value="Biology"> Biology
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="subjects" value="Chemistry"> Chemistry
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="subjects" value="Physics"> Physics
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="subjects" value="English"> English
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="subjects" value="Holy Quran"> Holy Quran
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Goals & Expectations (Optional)</label>
+                            <textarea id="message" name="message" placeholder="Tell us what you want to achieve..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="agree" required> I agree to be contacted via WhatsApp
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">📝 Submit Enrollment Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p class="section-subtitle">Connect with us for inquiries or more information</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">💬</div>
+                        <h3>WhatsApp Chat</h3>
+                        <p>Direct communication for scheduling classes and quick inquiries.</p>
+                        <a href="https://wa.me/923375314089" class="whatsapp-btn">
+                            💬 Message on WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Physical Academy</h3>
+                        <p>KDA Sector 8, Street 5<br>Kohat, KPK, Pakistan</p>
+                        <p style="font-size: 0.95rem; color: var(--text-light); margin-top: 0.5rem;">Visit for in-person classes</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">⏰</div>
+                        <h3>Availability</h3>
+                        <p>Classes on demand with maximum flexibility</p>
+                        <p style="font-size: 0.95rem; color: var(--text-light); margin-top: 0.5rem;">Morning, afternoon & evening slots available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p><strong>Muhammad Usama</strong> | Online & Physical Tutoring Academy</p>
+                <p>Expert guidance in 5 subjects for Matric & FSC students</p>
+                <div class="divider"></div>
+                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.85);">
+                    KDA Sector 8, Kohat | Online & Physical Classes | wa.me/923375314089<br>
+                    © 2024 Muhammad Usama Academy. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Form Handling
+        const enrollmentForm = document.getElementById('enrollmentForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        enrollmentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const classLevel = document.getElementById('class').value;
+            const mode = document.getElementById('mode').value;
+            const subjects = Array.from(document.querySelectorAll('input[name="subjects"]:checked')).map(el => el.value).join(', ');
+            const board = document.getElementById('board').value;
+            const message = document.getElementById('message').value;
+
+            if (!subjects) {
+                alert('Please select at least one subject');
+                return;
+            }
+
+            const whatsappMessage = `Hi Muhammad Usama! I'd like to enroll in your classes.%0A%0A*Student Information:*%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AClass: ${classLevel}%0AClass Mode: ${mode}%0ASubjects: ${subjects}%0ABoard: ${board}%0A%0AGoals: ${message || 'N/A'}%0A%0APlease confirm available slots.`;
+
+            formSuccess.style.display = 'block';
+            enrollmentForm.reset();
+
+            setTimeout(() => {
+                window.location.href = `https://wa.me/923375314089?text=${whatsappMessage}`;
+            }, 2000);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Hero scroll hide effect
+        const hero = document.querySelector('.hero');
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            const heroHeight = window.innerHeight;
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > heroHeight * 0.5) {
+                hero.style.opacity = String(Math.max(0, 1 - scrollPosition / heroHeight));
+                hero.style.pointerEvents = 'none';
+            } else {
+                hero.style.opacity = '1';
+                hero.style.pointerEvents = 'auto';
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.subject-card, .service-card, .pricing-card, .contact-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
